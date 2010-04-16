@@ -48,13 +48,21 @@ namespace Chweb.UI
                     SD.Graphics desktop = SD.Graphics.FromHwnd(mainWindowPtr);
 
                     // all -1 makes the entire window glass
-                    MARGINS margins = new MARGINS();
-                    margins.cxLeftWidth = -1;
-                    margins.cxRightWidth = -1;
-                    margins.cyTopHeight = -1;
-                    margins.cyBottomHeight = -1;
+                    MARGINS margins = new MARGINS()
+                    {
+                        cxLeftWidth = -1,
+                        cxRightWidth = -1,
+                        cyBottomHeight = -1,
+                        cyTopHeight = -1
+                    };
 
-                    DwmExtendFrameIntoClientArea(mainWindowSrc.Handle, ref margins);
+                    int ret = DwmExtendFrameIntoClientArea(
+                        mainWindowSrc.Handle, ref margins);
+
+                    if (ret != 0)
+                    {
+                        wnd.Background = originalBackground;
+                    }
                 }
                 catch (DllNotFoundException)
                 {

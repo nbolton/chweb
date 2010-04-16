@@ -48,9 +48,14 @@ namespace Chweb.UI
         {
             base.OnStartup(e);
 
-            if (e.Args.Length > 0 && e.Args[0] == "--test")
+            if (e.Args.Length > 0 && e.Args[0] == "--show")
             {
-                showChooser("http://www.google.co.uk");
+                string url = string.Empty;
+                if (e.Args.Length > 1)
+                {
+                    url = e.Args[1];
+                }
+                showChooser(url);
             }
 
             serviceHost.Open();

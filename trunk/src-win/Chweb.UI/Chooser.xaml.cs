@@ -32,6 +32,7 @@ namespace Chweb.UI
             this.IsVisibleChanged += new DependencyPropertyChangedEventHandler(Chooser_IsVisibleChanged);
 
             EnableGlass = true;
+            Background = SystemColors.ActiveCaptionBrush;
 
             // TODO: get from registry:
             // HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet
