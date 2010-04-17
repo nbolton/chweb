@@ -67,6 +67,9 @@ namespace Chweb.UI
 
         protected override void OnExit(ExitEventArgs e)
         {
+            // don't leave messy tray icon behind
+            tray.Hide();
+
             // probably not totally necessary
             serviceHost.Close();
 
