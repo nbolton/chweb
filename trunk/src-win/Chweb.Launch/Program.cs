@@ -138,11 +138,11 @@ namespace Chweb.Launch
                 // make the call (will only work if ui proc is available)
                 client.ShowChooser(url);
             }
-            catch (EndpointNotFoundException ex)
+            catch (EndpointNotFoundException)
             {
                 if (recover)
                 {
-                    recoverFromNoEndpoint(ex, url);
+                    recoverFromNoEndpoint(url);
                 }
                 else
                 {
@@ -153,8 +153,7 @@ namespace Chweb.Launch
             }
         }
 
-        private void recoverFromNoEndpoint(
-            EndpointNotFoundException ex, string url)
+        private void recoverFromNoEndpoint(string url)
         {
             Debug.WriteLine("Endpoint not found (can't talk to UI).");
 
@@ -167,9 +166,23 @@ namespace Chweb.Launch
             }
 
             string uiExec = string.Format(
-                @"{0}\{1} --show", getExecFileInfo().DirectoryName, chwebUiExec);
+                @"{0}\{1}", getExecFileInfo().DirectoryName, chwebUiExec);
 
-            Process.Start(uiExec);
+            ProcessStartInfo start = new ProcessStartInfo(
+                uiExec, "--show " + url);
+
+            try
+            {
+                Process.Start(start);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(
+                    "Could not start UI:\n" +
+                    "  " + uiExec + "\n" +
+                    "  " + start.Arguments,
+                    ex);
+            }
         }
 
         private bool isUiProcRunning()

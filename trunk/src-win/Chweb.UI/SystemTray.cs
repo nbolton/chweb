@@ -25,7 +25,7 @@ namespace Chweb.UI
             icon.Icon = Resources.Chweb;
             icon.Visible = true;
             icon.ContextMenuStrip = new ContextMenuStrip();
-            icon.Click += new EventHandler(icon_Click);
+            icon.MouseClick += new MouseEventHandler(icon_MouseClick);
 
             var settings = new ToolStripMenuItem("Settings");
             settings.Click += new EventHandler(settings_Click);
@@ -40,14 +40,17 @@ namespace Chweb.UI
             menu.Items.Add(exit);
         }
 
+        void icon_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                OnShowRequest(EventArgs.Empty);
+            }
+        }
+
         void settings_Click(object sender, EventArgs e)
         {
             OnSettingsRequest(EventArgs.Empty);
-        }
-
-        void icon_Click(object sender, EventArgs e)
-        {
-            OnShowRequest(EventArgs.Empty);
         }
 
         void exit_Click(object sender, EventArgs e)
@@ -82,6 +85,11 @@ namespace Chweb.UI
             {
                 ExitRequest(this, e);
             }
+        }
+
+        internal void Hide()
+        {
+            icon.Visible = false;
         }
     }
 }
