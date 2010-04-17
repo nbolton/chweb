@@ -78,7 +78,6 @@
     <None Include="Service References\IpcServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Chweb.reg" />
     <None Include="Service References\IpcServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
