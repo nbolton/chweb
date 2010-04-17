@@ -19,6 +19,8 @@ namespace Chweb.UI
     {
         private IpcService ipcService = new IpcService();
         private Chooser chooser = new Chooser();
+        private SystemTray tray = new SystemTray();
+        private SettingsEditor settings = new SettingsEditor();
         private ServiceHost serviceHost;
 
         public App()
@@ -26,9 +28,36 @@ namespace Chweb.UI
             Uri uri = new Uri(Settings.Default.IpcUri);
             serviceHost = new ServiceHost(ipcService, uri);
 
+            tray.Initialize();
+            tray.ShowRequest += new EventHandler(tray_ShowRequest);
+            tray.ExitRequest += new EventHandler(tray_ExitRequest);
+            tray.SettingsRequest += new EventHandler(tray_SettingsRequest);
+
             ipcService.ShowChooserRequest +=
                 new EventHandler<ShowChooserEventArgs>(
                     ipcService_ShowChooserRequest);
+
+            settings.Saved += new EventHandler(settings_Saved);
+        }
+
+        void settings_Saved(object sender, EventArgs e)
+        {
+            chooser.ReloadBrowserButtons();
+        }
+
+        void tray_SettingsRequest(object sender, EventArgs e)
+        {
+            settings.Show();
+        }
+
+        void tray_ExitRequest(object sender, EventArgs e)
+        {
+            Shutdown();
+        }
+
+        void tray_ShowRequest(object sender, EventArgs e)
+        {
+            showChooser(string.Empty);
         }
 
         void ipcService_ShowChooserRequest(object sender, ShowChooserEventArgs e)

@@ -59,5 +59,12 @@ namespace Chweb.UI.Properties {
                 resourceCulture = value;
             }
         }
+        
+        internal static System.Drawing.Icon Chweb {
+            get {
+                object obj = ResourceManager.GetObject("Chweb", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

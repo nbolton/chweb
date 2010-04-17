@@ -1,0 +1,20 @@
+﻿<src:WindowEx
+    x:Class="Chweb.UI.SettingsEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:src="clr-namespace:Chweb.UI" 
+    Title="Chweb Settings" Height="290" Width="239"
+    EnableGlass="True" Icon="Resources/Chweb.ico" ResizeMode="CanMinimize" Loaded="WindowEx_Loaded">
+    <Grid>
+        <Button Height="23" HorizontalAlignment="Right" Name="cancelButton" VerticalAlignment="Bottom" Width="75" Click="cancelButton_Click">Cancel</Button>
+        <Button Height="23" Margin="0,0,81,0" Name="acceptButton" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="acceptButton_Click">OK</Button>
+        <TabControl Margin="0,0,0,29" Name="tabControl1">
+            <TabItem Header="Browsers" Name="tabItem1">
+                <Grid>
+                    <Label Height="28" Margin="6,6,0,0" Name="label1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="54">First</Label>
+                    <TextBox Height="23" Margin="66,8,6,0" Name="firstTextBox" VerticalAlignment="Top" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</src:WindowEx>
