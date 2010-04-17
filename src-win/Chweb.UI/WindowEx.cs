@@ -12,6 +12,14 @@ namespace Chweb.UI
 {
     public class WindowEx : Window
     {
+        private Brush glassBackground = SystemColors.ActiveCaptionBrush;
+
+        public Brush GlassBackground
+        {
+            get { return glassBackground; }
+            set { glassBackground = value; }
+        }
+
         public bool EnableGlass { get; set; }
 
         [DllImport("DwmApi.dll")]
@@ -37,7 +45,6 @@ namespace Chweb.UI
             if (EnableGlass)
             {
                 Window wnd = (Window)sender;
-                Brush originalBackground = wnd.Background;
                 wnd.Background = Brushes.Transparent;
 
                 try
@@ -61,12 +68,12 @@ namespace Chweb.UI
 
                     if (ret != 0)
                     {
-                        wnd.Background = originalBackground;
+                        wnd.Background = GlassBackground;
                     }
                 }
                 catch (DllNotFoundException)
                 {
-                    wnd.Background = originalBackground;
+                    wnd.Background = GlassBackground;
                 }
             }
         }

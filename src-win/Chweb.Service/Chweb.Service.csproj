@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -73,7 +74,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
         <WcfProjectProperties>
-          <AutoStart>True</AutoStart>
+          <AutoStart>False</AutoStart>
         </WcfProjectProperties>
       </FlavorProperties>
     </VisualStudio>

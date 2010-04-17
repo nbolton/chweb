@@ -41,6 +41,7 @@
     <Reference Include="System.ServiceModel">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -74,9 +75,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrowserInfo.cs" />
+    <Compile Include="BrowserUtil.cs" />
     <Compile Include="Chooser.xaml.cs">
       <DependentUpon>Chooser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SettingsEditor.xaml.cs">
+      <DependentUpon>SettingsEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SystemTray.cs" />
     <Compile Include="WindowEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -117,6 +123,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SettingsEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Chweb.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

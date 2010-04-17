@@ -23,15 +23,24 @@ namespace Chweb.UI.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("net.pipe://localhost/chweb")]
         public string IpcUri {
             get {
                 return ((string)(this["IpcUri"]));
             }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FirstBrowser {
+            get {
+                return ((string)(this["FirstBrowser"]));
+            }
             set {
-                this["IpcUri"] = value;
+                this["FirstBrowser"] = value;
             }
         }
     }

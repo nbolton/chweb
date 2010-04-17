@@ -4,7 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:src="clr-namespace:Chweb.UI" 
     Title="Chweb" Height="210" Width="231" ShowInTaskbar="False" 
-    ResizeMode="NoResize" Topmost="True" WindowStyle="ToolWindow" SizeToContent="WidthAndHeight">
+    ResizeMode="NoResize" Topmost="True" WindowStyle="ToolWindow"
+    SizeToContent="WidthAndHeight"
+    EnableGlass="True">
     
     <Grid Name="BaseGrid" ShowGridLines="True" Margin="0"></Grid>
     
