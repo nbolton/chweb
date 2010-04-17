@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<registry>
+  <key name="HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\{1}">
+    <value>{1}</value>
+  </key>
+  <key name="HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\{1}\Capabilities">
+    <value name="ApplicationName">{1}</value>
+    <value name="ApplicationIcon">{0},0</value>
+    <value name="ApplicationDescription">{1}</value>
+  </key>
+  <key name="HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\{1}\Capabilities\FileAssociations">
+    <value name="crx">{1}Ext</value>
+    <value name=".xhtml">{1}HTML</value>
+    <value name=".xht">{1}HTML</value>
+    <value name=".shtml">{1}HTML</value>
+    <value name=".html">{1}HTML</value>
+    <value name=".htm">{1}HTML</value>
+  </key>
+  <key name="HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\{1}\Capabilities\StartMenu">
+    <value name="StartMenuInternet">{1}</value>
+  </key>
+  <key name="HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\{1}\Capabilities\URLAssociations">
+    <value name="https">{1}HTML</value>
+    <value name="http">{1}HTML</value>
+    <value name="ftp">{1}HTML</value>
+  </key>
+  <key name="HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\{1}\DefaultIcon">
+    <value name="IconsVisible" type="dword">00000001</value>
+    <value name="ShowIconsCommand">"{0}" --show-icons</value>
+    <value name="HideIconsCommand">"{0}" --hide-icons</value>
+    <value name="ReinstallCommand">"{0}" --make-default-browser</value>
+  </key>
+  <key name="HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\{1}\shell"></key>
+  <key name="HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\{1}\shell\open"></key>
+  <key name="HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\{1}\shell\open\command">
+    <value>"{0}"</value>
+  </key>
+  <key name="HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\Associations\UrlAssociations"></key>
+  <key name="HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\crx"></key>
+  <key name="HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\crx\UserChoice">
+    <value name="Progid">{1}Ext</value>
+  </key>
+  <key name="HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\ftp"></key>
+  <key name="HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\ftp\UserChoice">
+    <value name="Progid">{1}HTML</value>
+  </key>
+  <key name="HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice">
+    <value name="Progid">{1}HTML</value>
+  </key>
+  <key name="HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https"></key>
+  <key name="HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice">
+    <value name="Progid">{1}HTML</value>
+  </key>
+  <key name="HKEY_CLASSES_ROOT\http">
+    <value name="CustomUrlApplication">{0}</value>
+  </key>
+  <key name="HKEY_CLASSES_ROOT\http\DefaultIcon">
+    <value>{0},0</value>
+  </key>
+  <key name="HKEY_CLASSES_ROOT\http\shell">
+    <value>open</value>
+  </key>
+  <key name="HKEY_CLASSES_ROOT\http\shell\open"></key>
+  <key name="HKEY_CLASSES_ROOT\http\shell\open\command">
+    <value>"{0}" "%1"</value>
+  </key>
+  <key name="HKEY_CLASSES_ROOT\https">
+    <value name="CustomUrlApplication">{0}</value>
+  </key>
+  <key name="HKEY_CLASSES_ROOT\https\DefaultIcon">
+    <value>{0},0</value>
+  </key>
+  <key name="HKEY_CLASSES_ROOT\https\shell">
+    <value>open</value>
+  </key>
+  <key name="HKEY_CLASSES_ROOT\https\shell\open"></key>
+  <key name="HKEY_CLASSES_ROOT\https\shell\open\command">
+    <value>"{0}" "%1"</value>
+  </key>
+  <key name="HKEY_CLASSES_ROOT\ftp"></key>
+  <key name="HKEY_CLASSES_ROOT\ftp\DefaultIcon">
+    <value>{0},0</value>
+  </key>
+  <key name="HKEY_CLASSES_ROOT\ftp\shell">
+    <value>open</value>
+  </key>
+  <key name="HKEY_CLASSES_ROOT\ftp\shell\open"></key>
+  <key name="HKEY_CLASSES_ROOT\ftp\shell\open\command">
+    <value>"{0}" "%1"</value>
+  </key>
+</registry>

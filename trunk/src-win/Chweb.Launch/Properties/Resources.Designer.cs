@@ -61,24 +61,22 @@ namespace Chweb.Launch.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Windows Registry Editor Version 5.00
-        ///
-        ///[HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\Chweb]
-        ///@=&quot;Chweb&quot;
-        ///
-        ///[HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\Chweb\Capabilities]
-        ///&quot;ApplicationName&quot;=&quot;Chweb&quot;
-        ///&quot;ApplicationIcon&quot;=&quot;C:\\Projects\\Personal\\chweb\\src-win\\Chweb.Launch\\bin\\Debug\\Chweb.Launch.exe,0&quot;
-        ///&quot;ApplicationDescription&quot;=&quot;Chweb&quot;
-        ///
-        ///[HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\Chweb\Capabilities\FileAssociations]
-        ///&quot;crx&quot;=&quot;ChwebExt&quot;
-        ///&quot;.xhtml&quot;=&quot;ChwebHTML&quot;
-        ///&quot;.xht&quot;=&quot;ChwebHTML&quot; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;registry&gt;
+        ///  &lt;key name=&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\{1}&quot;&gt;
+        ///    &lt;value&gt;{1}&lt;/value&gt;
+        ///  &lt;/key&gt;
+        ///  &lt;key name=&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\{1}\Capabilities&quot;&gt;
+        ///    &lt;value name=&quot;ApplicationName&quot;&gt;{1}&lt;/value&gt;
+        ///    &lt;value name=&quot;ApplicationIcon&quot;&gt;{0},0&lt;/value&gt;
+        ///    &lt;value name=&quot;ApplicationDescription&quot;&gt;{1}&lt;/value&gt;
+        ///  &lt;/key&gt;
+        ///  &lt;key name=&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Clients\StartMenuInternet\{1}\Capabilities\FileAssociations&quot;&gt;
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string ChwebRegistry {
+        internal static string RegistryXml {
             get {
-                return ResourceManager.GetString("ChwebRegistry", resourceCulture);
+                return ResourceManager.GetString("RegistryXml", resourceCulture);
             }
         }
     }
