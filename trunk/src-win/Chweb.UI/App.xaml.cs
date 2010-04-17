@@ -32,12 +32,18 @@ namespace Chweb.UI
             tray.ShowRequest += new EventHandler(tray_ShowRequest);
             tray.ExitRequest += new EventHandler(tray_ExitRequest);
             tray.SettingsRequest += new EventHandler(tray_SettingsRequest);
+            tray.RefreshRequest += new EventHandler(tray_RefreshRequest);
 
             ipcService.ShowChooserRequest +=
                 new EventHandler<ShowChooserEventArgs>(
                     ipcService_ShowChooserRequest);
 
             settings.Saved += new EventHandler(settings_Saved);
+        }
+
+        void tray_RefreshRequest(object sender, EventArgs e)
+        {
+            chooser.ReloadBrowserButtons();
         }
 
         void settings_Saved(object sender, EventArgs e)

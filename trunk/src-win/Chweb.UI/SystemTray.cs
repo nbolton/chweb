@@ -12,6 +12,7 @@ namespace Chweb.UI
         public event EventHandler ShowRequest;
         public event EventHandler ExitRequest;
         public event EventHandler SettingsRequest;
+        public event EventHandler RefreshRequest;
 
         private NotifyIcon icon = new NotifyIcon();
 
@@ -27,6 +28,10 @@ namespace Chweb.UI
             icon.ContextMenuStrip = new ContextMenuStrip();
             icon.MouseClick += new MouseEventHandler(icon_MouseClick);
 
+            var refresh = new ToolStripMenuItem("Refresh");
+            refresh.Click += new EventHandler(refresh_Click);
+            menu.Items.Add(refresh);
+
             var settings = new ToolStripMenuItem("Settings");
             settings.Click += new EventHandler(settings_Click);
             menu.Items.Add(settings);
@@ -38,6 +43,11 @@ namespace Chweb.UI
             var exit = new ToolStripMenuItem("Exit");
             exit.Click += new EventHandler(exit_Click);
             menu.Items.Add(exit);
+        }
+
+        void refresh_Click(object sender, EventArgs e)
+        {
+            OnRefreshRequest(EventArgs.Empty);
         }
 
         void icon_MouseClick(object sender, MouseEventArgs e)
@@ -61,6 +71,14 @@ namespace Chweb.UI
         void show_Click(object sender, EventArgs e)
         {
             OnShowRequest(EventArgs.Empty);
+        }
+
+        private void OnRefreshRequest(EventArgs e)
+        {
+            if (RefreshRequest != null)
+            {
+                RefreshRequest(this, e);
+            }
         }
 
         public void OnSettingsRequest(EventArgs e)
