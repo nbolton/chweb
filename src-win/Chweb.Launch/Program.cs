@@ -107,19 +107,26 @@ namespace Chweb.Launch
 
         private void makeDefaultBrowser()
         {
-            // get the filename (with escaped slashes) and use the registry 
-            // export format file as a string format to insert filenames
-            string regFileCotnent = string.Format(
-                Resources.ChwebRegistry, 
-                getExecFileInfo().FullName.Replace(@"\", @"\\"));
+            RegistrySettings rs = new RegistrySettings(
+                Resources.RegistryXml, 
+                getExecFileInfo().FullName,
+                "Chweb");
 
-            // write the reg file to temp and then use regedit to import
-            string tempRegFile = IOPath.GetTempFileName();
-            File.WriteAllText(tempRegFile, regFileCotnent);
-            Process.Start("regedit", "/s " + tempRegFile);
+            rs.Apply();
 
-            // now delete the temp file (no longer needed)
-            File.Delete(tempRegFile);
+            //// get the filename (with escaped slashes) and use the registry 
+            //// export format file as a string format to insert filenames
+            //string regFileCotnent = string.Format(
+            //    Resources.ChwebRegistry, 
+            //    getExecFileInfo().FullName.Replace(@"\", @"\\"));
+
+            //// write the reg file to temp and then use regedit to import
+            //string tempRegFile = IOPath.GetTempFileName();
+            //File.WriteAllText(tempRegFile, regFileCotnent);
+            //Process.Start("regedit", "/s " + tempRegFile);
+
+            //// now delete the temp file (no longer needed)
+            //File.Delete(tempRegFile);
         }
 
         private FileInfo getExecFileInfo()

@@ -35,7 +35,7 @@ WriteRegStr HKEY_LOCAL_MACHINE "Software\Microsoft\Windows\CurrentVersion\Uninst
 ; write out uninstaller
 WriteUninstaller "$INSTDIR\ChwebUninstall.exe"
 
-ExecShell "" "$INSTDIR\Chweb.Launch.exe --make-default-browser"
+nsExec::Exec "$INSTDIR\Chweb.Launch.exe --make-default-browser"
 SectionEnd ; end of default section
 
 
